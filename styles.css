@@ -1,0 +1,96 @@
+:root{
+  --bg: #0b0f14;
+  --white: rgba(255,255,255,0.98);
+  --white-2: rgba(255,255,255,0.88);
+  --white-3: rgba(255,255,255,0.78);
+  --border: rgba(255,255,255,0.18);
+}
+
+/* Full-page container */
+.wip-page{
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+/* Background image (your profile photo) */
+.bg-blur{
+  position: absolute;
+  inset: 0;
+  background-image: url("assets/big.jpg");
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.1);
+  filter: blur(10px) brightness(0.8) saturate(1.05);
+  opacity: 1;
+}
+
+/* Dark overlay for contrast */
+.wip-page::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 8, 12, 0.62);
+}
+
+/* Center card */
+.wip-card{
+  position: relative;
+  z-index: 1;
+  border-radius: 22px;
+  border: 1px solid var(--border);
+  background: rgba(0,0,0,0.38);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 20px 70px rgba(0,0,0,0.55);
+  min-width: min(760px, 92vw);
+}
+
+/* Make text ALWAYS white */
+.wip-title,
+.wip-subtitle,
+.wip-note,
+.wip-footnote{
+  color: var(--white) !important;
+}
+
+/* Typography */
+.wip-title{
+  font-weight: 800;
+  letter-spacing: 0.10em;
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+}
+
+.wip-subtitle{
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  font-size: 0.95rem;
+  color: var(--white-2) !important;
+}
+
+.wip-note{
+  color: var(--white-3) !important;
+  margin-bottom: 1.5rem;
+}
+
+.wip-footnote{
+  color: var(--white-2) !important;
+  font-size: 0.95rem;
+}
+
+/* Static loading bar */
+.wip-progress{
+  width: min(420px, 72vw);
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.16);
+  overflow: hidden;
+  margin: 0 auto;
+  border: 1px solid rgba(255,255,255,0.10);
+}
+
+.wip-progress-bar{
+  height: 100%;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.92);
+}
